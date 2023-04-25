@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+  
+  <div class="text-center"><h1 >Algum texto</h1></div>
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="margin-left: 10%;">
+        <img src="https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="width: 80% !important; ">
+      </div>
+      <div class="carousel-item" style="margin-left: 10%;">
+        <img src="https://images.pexels.com/photos/1166209/pexels-photo-1166209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="width: 80% !important; ">
+      </div>
+      <div class="carousel-item" style="margin-left: 10%;">
+        <img src="https://images.pexels.com/photos/2440021/pexels-photo-2440021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="..." style="width: 80% !important; ">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+{% endblock %}
+
+{% comment %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>É O DALE MEU FI</h1>
+    {% for c in clientes%}
+    <a>{{c.name}}</a>
+    {%endfor%}
+
+    <form action="" method="post" role="form" class="php-email-form">
+        {%csrf_token%}
+        <div class="row">
+          <div class="col-md-6 form-group">
+            {{form.name}}
+          </div>
+          <div class="col-md-6 form-group mt-3 mt-md-0">
+            {{form.email}}
+          </div>
+        </div>
+        <div class="form-group mt-3">
+          {{form.message}}
+        </div>
+        <div class="form-group mt-3">
+          {{form.phone}}
+        </div>
+        <div class="text-center"><button type="submit">Enviar Menssagem</button></div>
+      </form>
+</body>
+</html> {% endcomment %}
+
