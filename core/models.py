@@ -11,7 +11,4 @@ class ContatoCliente(models.Model):
     def __str__(self) -> str:
         return self.name
 
-    @classmethod
-    def recuperar_contato(cls):
-        return cls.objects.all()
-
+   

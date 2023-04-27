@@ -3,6 +3,9 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
+ul .errorlist li{
+  color: red;
+}
 
 a {
   text-decoration: none;
@@ -427,6 +430,12 @@ h6 {
   animation-delay: 0.4s;
   margin: 0 auto 30px auto;
   color: #fff;
+}
+@media screen and (max-width: 767px) {
+  /* estilos para quando a tela tem até 767px de largura */
+  #hero{
+    display: none;
+  }
 }
 
 #hero .carousel-inner .carousel-item {

@@ -1,26 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.views.generic import TemplateView
-from .models import ContatoCliente
 from .forms import ContatoForm
 from .utils import EnviarEmail
-# Create your views here.
+from django.contrib import messages
 
-    
+from django.urls import reverse
+
 class HomePage(TemplateView):
     template_name = 'index.html'
-    def get(self,request):
-        return render(request, 'index.html',{'form':ContatoForm.recuperar_formulario()})
+
+    def get(self, request, *args, **kwargs):
+        form = ContatoForm.recuperar_formulario()
+        return render(request, self.template_name, {'form': form, 'errors': form.errors})
     
     def post(self, request, *args, **kwargs):
-       
-        form = ContatoForm.recuperar_formulario()(request.POST)
-        
+        form = ContatoForm(request.POST)
         if form.is_valid():
             contato = form.save()
-            nome  = form['name'].value()
-            email = form['email'].value()
-            phone = form['phone'].value()
-            menssagem = form['message'].value()
-            EnviarEmail.enviar_email(nome,email,phone,menssagem)
-            return render(request, 'index.html',{'form':ContatoForm.recuperar_formulario()})
+            EnviarEmail.enviar_email(contato=contato)
+            messages.success(request, 'Mensagem enviada com sucesso!')
+            return redirect(reverse('home_page')+ '#form', self.template_name, {'form': ContatoForm.recuperar_formulario()})
+        else:
+            return redirect(reverse('home_page')+ '#form',self.template_name, {'form': form, 'errors': form.errors})
