@@ -19,7 +19,7 @@ class InputComum(TextInput):
         super().__init__(*args, attrs=kwargs)
   
 
-
+# Criando o Form aqui
 class ContatoForm(ModelForm):
     class Meta:
         model = ContatoCliente
