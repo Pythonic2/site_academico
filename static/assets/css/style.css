@@ -382,7 +382,7 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 150px;
+  height: 420px !important;
   background-color: rgba(9, 9, 9, 0.8);
   overflow: hidden;
   position: relative;
@@ -401,6 +401,13 @@ h6 {
   right: 0;
   left: 0;
   bottom: 0;
+
+}
+.elemento-escondido{
+  height: 420px !important;
+}
+.slide-grande{
+  height: 420px !important;
 }
 
 #hero .carousel-item::before {
