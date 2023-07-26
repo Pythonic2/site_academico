@@ -1477,9 +1477,29 @@ section {
   .elemento-escondido{
     display: none; /* Esconde o elemento com a classe 'elemento-escondido' */
   }
+  #hero {
+    width: 100%;
+    height: 320px !important;
+    background-color: rgba(9, 9, 9, 0.8);
+    overflow: hidden;
+    position: relative;
+  }
+  .elemento-escondido{
+    height: 320px !important;
+  }
+  .slide-grande{
+    height: 320px !important;
+  }
+  
 }
 @media (min-width: 768px) {
   .slide-grande {
     display:block ; /* Esconde o elemento com a classe 'elemento-escondido' */
   }
 }
+
+
+
+
+/**/
+
