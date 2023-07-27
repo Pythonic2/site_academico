@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from django.forms import Textarea, TextInput, ChoiceField, SelectMultiple, Select
+from django.forms import Textarea, TextInput, Select
 from core.models import ContatoCliente
 
 
@@ -39,6 +39,7 @@ class ContatoForm(ModelForm):
             "email": InputComum(type="email",id='email',placeholder='Digite seu email'),
             "phone": InputComum(type="tel",id='phone',placeholder='83912345678'),
             "tipo": SelectOptions(),
+            "cidade": SelectOptions(),
         }
     
      
