@@ -13,8 +13,8 @@ class EnviarEmail():
         msg['From'] = settings.EMAIL_ADDRESS
         msg['To'] = 'igormarinhosilva@gmail.com'
         
-        msg.set_content(f'Novo Contato: {contato.name}.\nEmail: {contato.email}.\nPhone: {contato.phone}.\nMenssagem: {contato.message}.')
+        msg.set_content(f'Novo Contato: {contato.name}.\nEmail: {contato.email}.\nPhone: {contato.phone}.\nTipo: {contato.tipo}.\nMenssagem: {contato.message}.')
 
-        with smtplib.SMTP_SSL('mail.cosmicviewpoint.com',465) as smtp:
+        with smtplib.SMTP_SSL('smtp.gmail.com',587) as smtp:
             smtp.login(settings.EMAIL_ADDRESS,settings.EMAIL_PASSWORD)
             smtp.send_message(msg)
