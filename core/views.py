@@ -4,7 +4,6 @@ from django.views.generic import TemplateView
 from .forms import ContatoForm
 from .utils import EnviarEmail
 from django.contrib import messages
-
 from django.urls import reverse
 
 class HomePage(TemplateView):
@@ -18,7 +17,7 @@ class HomePage(TemplateView):
         form = ContatoForm(request.POST)
         if form.is_valid():
             contato = form.save()
-            #EnviarEmail.enviar_email(contato=contato)
+            EnviarEmail.enviar_email(contato=contato)
             messages.success(request, 'Mensagem enviada com sucesso!')
             return redirect(reverse('home_page')+ '#form', self.template_name, {'form': ContatoForm.recuperar_formulario()})
         else:

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2xfnm521eq-%x9e)pdf5w$^s7ez1680$a_vyj7+q2vf*8@()&j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.ciaseniorcuidar.com.br']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -116,19 +117,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-
-# Caminho para o diretório estático dentro do projeto
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-# Caminho para o diretório onde os arquivos estáticos serão coletados para produção
+STATIC_URL = '/home/ciasenio/repositories/site_academico/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-EMAIL_ADDRESS = 'igoormarinhosilva@gmail.com'
+EMAIL_ADDRESS = 'contato@ciaseniorcuidar.com.br'
 EMAIL_PASSWORD = '37192541aaSS@'

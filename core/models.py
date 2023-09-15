@@ -8,14 +8,14 @@ class ContatoCliente(models.Model):
     message = models.TextField(max_length=500)
     phone = models.CharField(max_length=11)
     OPCOES_CUIDADOR = (
-        ('Selecione', '--------'),
+        ('Nao Selecionado', '--------'),
         ('Preciso de um Cuidador', 'Preciso de um cuidador'),
         ('Sou um Cuidador', 'Sou um cuidador'),
     )
     tipo = models.CharField(max_length=25, choices=OPCOES_CUIDADOR, default='')
 
     OPCOES_CIDADE = (
-        ('Selecione', '--------'),
+        ('Nao Selecionado', '--------'),
         ('João Pessoa', 'João Pessoa'),
         ('Campina Grande', 'Campina Grande'),
     )

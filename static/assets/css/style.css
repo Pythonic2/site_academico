@@ -7,6 +7,10 @@ ul .errorlist li{
   color: red;
 }
 
+p{text-align: justify;text-justify: inter-word;}
+p .fst-italic{text-align: justify;  text-justify: inter-word;
+}
+
 a {
   text-decoration: none;
   color: #A4C4BC;
@@ -651,7 +655,7 @@ section {
 }
 
 .featured-services .description {
-  line-height: 24px;
+  line-height: 28px;
   font-size: 14px;
 }
 
@@ -1493,6 +1497,7 @@ section {
     display: block;
     margin: 2% 2% 2% 2%;
     background-color: #759BBE;
+    border-color:red;
 
   }
 
