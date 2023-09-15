@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -25,3 +26,14 @@ class ContatoCliente(models.Model):
         return self.name
 
    
+class Post(models.Model):
+    autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=200)
+    subtitulo = models.CharField(max_length=200, blank=True)
+    texto = models.TextField()
+    data_publicacao = models.DateTimeField(auto_now_add=True)
+    imagem = models.ImageField(upload_to='imagens/', null=True, blank=True)
+    video_url = models.URLField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.titulo
