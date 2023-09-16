@@ -9,12 +9,13 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
-          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>
-          <li><a class="nav-link scrollto" href="#featured-services">Serviços</a></li>
-          {% comment %} <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li> {% endcomment %}
-          <li><a class="nav-link scrollto" href="#contact">Contato</a></li>
-          <li><a class="getstarted scrollto" href="#contact">Solicite seu Orçamento</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'home_page' %}">Início</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home_page' %}">Sobre</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'home_page' %}">Serviços</a></li>
+          {% comment %} <li><a class="nav-link scrollto " href="{% url 'home_page' %}">Portfolio</a></li> {% endcomment %}
+          <li><a class="nav-link scrollto" href="{% url 'home_page' %}">Contato</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'blog' %}">Blog</a></li>
+          <li><a class="getstarted scrollto" href="{% url 'home_page' %}">Solicite seu Orçamento</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

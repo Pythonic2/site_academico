@@ -22,3 +22,13 @@ class HomePage(TemplateView):
             return redirect(reverse('home_page')+ '#form', self.template_name, {'form': ContatoForm.recuperar_formulario()})
         else:
             return redirect(reverse('home_page')+ '#form',self.template_name, {'form': form, 'errors': form.errors})
+
+
+class TestePage(TemplateView):
+    template_name = 'blog.html'
+
+    def get(self, request, *args, **kwargs):
+        
+        return render(request, self.template_name)
+    
+    
