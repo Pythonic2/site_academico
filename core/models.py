@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class ContatoCliente(models.Model):
@@ -26,14 +26,21 @@ class ContatoCliente(models.Model):
         return self.name
 
    
+class TituloBlog(models.Model):
+    titulo = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=400, blank=True)
+    imagem = models.ImageField() #540x540
+
+    def __str__(self):
+        return self.titulo
+    
 class Post(models.Model):
-    autor = models.ForeignKey(User, on_delete=models.CASCADE)
+    autor = models.CharField(max_length=200)
     titulo = models.CharField(max_length=200)
     subtitulo = models.CharField(max_length=200, blank=True)
-    texto = models.TextField()
+    texto = RichTextUploadingField()
+    imagem_post = models.ImageField(blank=True) #1534x2300
     data_publicacao = models.DateTimeField(auto_now_add=True)
-    imagem = models.ImageField(upload_to='imagens/', null=True, blank=True)
-    video_url = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.titulo

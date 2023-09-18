@@ -1,0 +1,153 @@
+{%extends 'base_blog.html'%}
+{%load static%}
+{%block 'content_post'%}    
+
+<div>
+	
+	
+
+		<!-- Hero Section -->
+	  <div class="container" id="hero">
+	  	<div class="row justify-content-end">
+	  		<div class="col-lg-6 hero-img-container">
+	  			<div class="hero-img">
+	  				<!-- hero img -->
+	  				<img src="{{item.imagem_post.url}}">
+	  			</div>
+	  		</div>	  		
+
+	  		<div class="col-lg-9">
+	  			<div class="hero-title">
+	  				<h1>{{item.titulo}}</h1>
+	  			</div>
+
+	  		</div>
+	  		<!-- hero meta -->
+	  		<div class="col-lg-6">
+	  			<div class="hero-meta">
+	  				<div class="author">
+	  					<!-- <div class="author-img"><img src="./img/author-img.png"></div> -->
+	  					<div class="author-meta">
+	  					<span class="author-name"></span>
+	  					<span class="author-tag">{{item.subtitulo}}</span>
+	  					</div>	
+	  				</div>
+	  				<span class="date mt-2">{{item.data_publicacao}}</span>
+	  				<div class="tags mt-2">
+							<!-- <a href=""><span class="badge badge-pill p-2 badge-light">#Travel</span></a>
+							<a href="">
+							<span class="badge badge-pill p-2 badge-light">#Flight</span></a>
+							<a href="">
+							<span class="badge badge-pill p-2 badge-light">#Vlogger</span></a> -->
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+</div>
+
+
+<!-- Content -->
+<div class="container mt-5" id="content">
+	<div class="row justify-content-center">
+		<!-- Share buttons -->
+		<div class="col-lg-1 text-left mb-3 fixed" id="social-share">
+			<a class="btn  btn-light m-2" href="#"><i class="fab fa-facebook-f"></i></a>
+			<a class="btn  btn-light m-2" href="#"><i class="fab fa-google"></i></a>
+			<a class="btn  btn-light m-2" href="#"><i class="fab fa-twitter"></i></a>
+		</div>
+
+		<!-- the content -->
+		<div class="col-xl-7 col-lg-10 col-md-12">
+			<p class="lead">{{item.texto| safe}}</p>
+		</div>
+
+		<div class="col-lg-10 mt-3">
+			<hr>
+		</div>
+	</div>
+</div>
+
+
+<!-- Related Article Grid -->
+
+<div class="container mt-3 mb-5" id="article-grid">
+	<div class="row">
+
+		{%for post in posts%}
+		<div class="col-xl-6 col-lg-12 text-center">
+			<a href="{% url 'detalhes_item' post.titulo %}">
+			<div class="article-card">
+			<div class="article-img">
+				<img src="{{ post.imagem_post.url}}">
+			</div>
+
+				<div class="article-meta text-left">
+					<h2>{{post.titulo}}</h2>
+					<p>{{post.subtitulo}}</p>
+				</div>
+			</div>
+			</a>
+		</div>
+		{% endfor %}
+		
+
+	</div>
+</div>
+
+<!-- Footer section  -->
+
+<footer class="container-fluid mt-1 p-4">
+	<div class="container ">
+		<div class="row pb-1"> 
+		<!-- Footer logo -->
+		<div class="col-lg-3 col-md-12"><img class="logo" src="{% static 'assets/img/logo.png'%}"></div>
+
+		<!-- footer links -->
+		<div class="col-lg-6 col-md-12">
+			<ul class="nav justify-content-center">
+			  <li class="nav-item">
+			    <a class="nav-link active" href="#">#Saúde</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">#Saúde</a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">#Saúde</a>
+			  </li>			  
+			  <li class="nav-item">
+			    <a class="nav-link" href="#">#Saúde</a>
+			  </li>
+			</ul>
+		</div>
+
+		<!-- footer social links -->
+		<div class="col-lg-3 col-md-12">
+			<ul class="nav justify-content-end">
+			  <li class="nav-item">
+			    <a class="nav-link active btn btn-light" href="#"><i class="fab fa-facebook-f"></i></a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link active btn btn-light" href="#"><i class="fab fa-google"></i></a>
+			  </li>
+			  <li class="nav-item">
+			    <a class="nav-link active btn btn-light" href="#"><i class="fab fa-twitter"></i></a>
+			  </li>
+			</ul>
+
+		</div>
+
+		<hr>
+		</div>
+		<hr>
+
+		<!-- copyright text -->
+		<div class="row pt-2">
+			<div class="col-lg-12 text-center">
+				<span>&copy <a href="">NewToDesign.com</a> All Rights Received.</span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+{%endblock%}

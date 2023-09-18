@@ -1,10 +1,78 @@
-{% extends 'base.html'%}
+{%extends 'base_blog.html'%}
+{%load static%}
+{%block 'titulo_pagina'%}Blog C&A Sênior Cuidar{%endblock%}
+{%block 'content_post'%}
+    
+	  <!-- hero section -->
+	  <div class="container" id="hero">
+	  	<div class="row justify-content-end">
+	  		<div class="col-lg-6 hero-img-container">
+	  			<!-- <a href="./single.html"> -->
+	  			<div class="hero-img">
+	  				<img src="{{ titulo_blog.imagem.url }}">
+	  			</div>
+	  			</a>
+	  		</div>	  		
 
-{% block 'content'%}
+	  		<div class="col-lg-9">
+	  			<div class="hero-title">
+	  				<!-- <a href="./single.html"> -->
+	  				<h1>{{titulo_blog.titulo}}</h1>
+	  				</a>
+	  			</div>
 
-<div class="teste23">
-    <h1>oi</h1>
+	  		</div>
+
+	  		<div class="col-lg-6">
+	  			<div class="hero-meta">
+	  				<p>{{titulo_blog.subtitle}}</p>
+	  				<!-- <div class="author">
+	  					<div class="author-img"><img src="{% static 'assets/img/blog/author-img.png'%}"></div>
+	  					<div class="author-meta">
+	  					<span class="author-name">Celeste Connell</span>
+	  					<span class="author-tag">Travel Blogger</span>
+	  					</div>	
+	  				</div> -->
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
 </div>
+<!-- hero ends -->
 
+<!-- Article Grid -->
 
+<div class="container mt-2 mb-2 pt-5 pb-5" id="article-grid">
+	<div class="row justify-content-center">
+
+        {%for post in posts%}
+		<div class="col-xl-6 col-lg-12 text-center">
+			<a href="{% url 'detalhes_item' post.titulo %}">
+			<div class="article-card">
+			<div class="article-img">
+				<img src="{{post.imagem_post.url}}">
+			</div>
+
+				<div class="article-meta text-left">
+					<h2>{{post.titulo}}</h2>
+					<p>{{post.subtitulo}}</p>
+				</div>
+			</div>
+			</a>
+		</div>
+	
+		{%endfor%}
+
+		<hr>
+		</div>
+		<hr>
+
+		<!-- copyright text -->
+		<div class="row pt-2">
+			<div class="col-lg-12 text-center">
+				<span>&copy <a href="">NewToDesign.com</a> All Rights Received.</span>
+			</div>
+		</div>
+	</div>
+</footer>
 {%endblock%}
