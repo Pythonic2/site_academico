@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-2xfnm521eq-%x9e)pdf5w$^s7ez1680$a_vyj7+q2vf*8@()&j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['www.ciaseniorcuidar.com.br']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.ciaseniorcuidar.com.br']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -111,8 +111,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-#STATIC_URL = '/home/ciasenio/repositories/site_academico/static/'
-STATIC_URL = '/static/'
+STATIC_URL = '/home/ciasenio/repositories/site_academico/static/'
+#STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
@@ -124,18 +124,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-# CKEDITOR_IMAGE_BACKEND = "pillow"
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar': 'Custom',
-#         'toolbar_Custom': [
-#             ['Bold', 'Italic', 'Underline'],
-#             ['Link', 'Unlink'],
-#             ['NumberedList', 'BulletedList'],
-#             ['RemoveFormat', 'Source']
-#         ],
-#     },
-# }
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
