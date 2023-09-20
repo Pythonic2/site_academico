@@ -16,13 +16,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/estilo.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/estilo_blog.css'%}">
     
       <title>{%block 'titulo_pagina'%}{%endblock%}</title>
     
   </head>
   <body>
-    <section id="topbar" class="d-flex align-items-center" style='background-color:#d3d3d3;'>
+    <section id="topbar" class="d-flex align-items-center" style='background-color:#d3d3d3; width: 110%;'>
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
           <i class="bi bi-envelope-fill"></i><a href="mailto:contato@ciaseniorcuidar.com.br">contato@ciaseniorcuidar.com.br</a>
@@ -61,6 +61,63 @@
     {%block 'content_post'%}
 
     {%endblock%}
+    <footer class="container-fluid mt-1 p-4">
+      <div class="container ">
+        <div class="row pb-1"> 
+        <!-- Footer logo -->
+        <!-- <div class="col-lg-3 col-md-12"><img class="logo" src="{% static 'assets/img/logo.png'%}"></div> -->
+    
+        <!-- footer links -->
+        <div class="col-lg-6 col-md-12">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'blog'%}" target="_blank">Temas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home_page'%}" target="_blank">Nosso Site</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home_page'%}#contact" target="_blank">Contato</a>
+            </li>	
+		  
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home_page'%}#featured-services" target="_blank">Enfermagem</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home_page'%}#clients" target="_blank">Parceiros</a>
+            </li>
+          </ul>
+        </div>
+    
+        <!-- footer social links -->
+        <div class="col-lg-3 col-md-12">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active btn btn-light" href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active btn btn-light" href="#"><i class="fab fa-google"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active btn btn-light" href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+          </ul>
+    
+        </div>
+    
+        <hr>
+        </div>
+        <hr>
+    
+        <!-- copyright text -->
+        <div class="row pt-2">
+          <div class="col-lg-12 text-center">
+            <span>Desenvolvido por: <a href="">Igor Marinho</a> &copy Todos os Direitos Reservados.</span>
+          </div>
+        </div>
+      </div>
+    </footer>
         <script src="{% static 'assets/js/main.js'%}"></script>
 
     
